@@ -4,8 +4,8 @@ var Player = mongoose.model('Player');
 module.exports ={// if errors ,send errors
   
   create: function(req,res){
-    console.log("create function",req.body)
-    let player= new Player({name: req.body.name,position: req.body.position })
+    console.log("create function",req.body.username)
+    let player= new Player({username: req.body.username,score: req.body.score,avatar: req.body.avatar })
     player.save(function(err){
           if (err){
             console.log("Inside register error",err)
@@ -18,7 +18,7 @@ module.exports ={// if errors ,send errors
         })
   },
   show: function(req,res){
-    
+    console.log("show method")
     Player.find({},function(err,players){
       if (err){
         console.log(err)
@@ -31,27 +31,27 @@ module.exports ={// if errors ,send errors
         
     })
   },
-  delete: function(req,res){
-    Player.find({_id: req.body.id}).remove().exec()
-    res.json(true)
-  },
-  update: function(req,res){
-  Player.findById(req.body.player._id, function(err,player){
-    if (err){
-      console.log("error",err)
-    }
-    else{
-      player.game=req.body.player.game
-      player.save(function(err){
-        if (err){
-          console.log("error",err)
-        }
-        else{
-          console.log("success")
-        }
-      })
-    }
-  })
-  }
+  // delete: function(req,res){
+  //   Player.find({_id: req.body.id}).remove().exec()
+  //   res.json(true)
+  // },
+  // update: function(req,res){
+  // Player.findById(req.body.player._id, function(err,player){
+  //   if (err){
+  //     console.log("error",err)
+  //   }
+  //   else{
+  //     player.game=req.body.player.game
+  //     player.save(function(err){
+  //       if (err){
+  //         console.log("error",err)
+  //       }
+  //       else{
+  //         console.log("success")
+  //       }
+  //     })
+  //   }
+  // })
+  // }
       
 }

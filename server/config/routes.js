@@ -10,17 +10,17 @@ module.exports= function(app){
     players.create(req,res)
   })
   app.get('/players', function(req, res, next) {
-    
+    console.log('show route')
     players.show(req,res)
   })
-  app.post('/players/delete',function(req, res, next) {
-    console.log("route delete")
-    players.delete(req,res)
-  })
-  app.post('/player/update',function(req, res, next) {
-    console.log("route update",req.body.player._id)
-    players.update(req,res)
-  })
+  // app.post('/players/delete',function(req, res, next) {
+  //   console.log("route delete")
+  //   players.delete(req,res)
+  // })
+  // app.post('/player/update',function(req, res, next) {
+  //   console.log("route update",req.body.player._id)
+  //   players.update(req,res)
+  // })
  
 
   app.all("*", (req,res,next) => {

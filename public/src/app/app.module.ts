@@ -8,7 +8,8 @@ import { NewComponent } from './new/new.component';
 import { ShowComponent } from './show/show.component';
 import { ResultsComponent } from './results/results.component';
 import { HttpModule } from '@angular/http';
-import { HttpService } from './http.service'
+import { HttpService } from './http.service';
+import { SortPipe } from './sort.pipe'
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { HttpService } from './http.service'
     RankingsComponent,
     NewComponent,
     ShowComponent,
-    ResultsComponent
+    ResultsComponent,
+    SortPipe
   ],
   imports: [
     BrowserModule,

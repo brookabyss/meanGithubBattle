@@ -30,4 +30,11 @@ export class HttpService {
        this._router.navigate(['/results',0])
     }
   }
+  createPlayer(player){
+    return this._http.post('/create',player).map(data=>data.json()).toPromise()
+  }
+  getPlayers(){
+    console.log("Here I am")
+    return this._http.get('/players').map(data=>data.json()).toPromise()
+  }
 }

@@ -26,7 +26,8 @@ export class ResultsComponent implements OnInit {
         (err)=> console.log(err),
         ()=>{}
       )
-      console.log("Results players", this.player1,this.player2)
+      this._httpService.createPlayer(this.player1)
+      this._httpService.createPlayer(this.player2)
    }
 
   ngOnInit() {

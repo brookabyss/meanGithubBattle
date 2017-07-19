@@ -1,26 +1,18 @@
 var mongoose     = require('mongoose'),
   Schema    = mongoose.Schema,
   PlayerSchema    = new mongoose.Schema({
-        name: {
+        username: {
                 type: String,
-                required: [true,'Name is empty'],
-                minlength: [2, "Name needs to be at least 4 characters in length."],
+                required: [true,'UserName is empty'],
                 },
 
-        position: {
+        score: {
+                type: Number,
+                },
+        avatar: {
                 type: String,
-                },
-        game: {
-                1:{
-                        status: {type: String, default: false}
-                },
-                2:{
-                        status: {type: String, default: false}
-                },
-                3:{
-                        status: {type: String, default: false}
                 }
-        }
+       
  
 }
 ,{ timestamps: true } );
