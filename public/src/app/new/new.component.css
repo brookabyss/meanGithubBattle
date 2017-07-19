@@ -1,0 +1,12 @@
+.battle{
+    display: inline-block;
+}
+.avatar{
+    height: 300px;
+    width: 300px;
+}
+.battle-btn{
+    margin: 10px;
+    color: orange;
+    width : 500px;
+}
