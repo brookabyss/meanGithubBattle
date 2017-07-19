@@ -1,6 +1,12 @@
 <div class="result" *ngIf="!winner==0">
   <h1 class="winner">1st Place</h1>
   <h3 class="winner"><span *ngIf="winner==1">{{player1.username  }} score {{player1.score}}</span><span *ngIf="winner==2">{{player2.username }} score {{player2.score}}</span></h3>
+  <img [src]="player1.avatar" *ngIf="winner==1">
+  <img [src]="player2.avatar" *ngIf="winner==2">
   <h1 id="loser">2nd Place</h1>
   <h3 class="loser"><span *ngIf="winner==1">{{player2.username }} score {{player2.score}}</span><span *ngIf="winner==2">{{player1.username }} score {{player1.score}}</span></h3>
 </div>
+<div class="result" *ngIf="winner==0">
+  <h1 class="tie">Its's a tie</h1>
+</div>
+<button [routerLink]="['']">Reset</button>

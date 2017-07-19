@@ -13,7 +13,7 @@ export class SortPipe implements PipeTransform {
     console.log("Try me")
     return players.sort(function(a,b){
       console.log(a.createdAt)
-      return a.score -b.score
+      return b.score -a.score
     })
   }
 
